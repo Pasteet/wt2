@@ -29,3 +29,9 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+Route::controller(App\Http\Controllers\CustomerController::class)->group(function () {
+    Route::get('/add-customer', 'create');
+    Route::post('/add-customer', 'store');
+});

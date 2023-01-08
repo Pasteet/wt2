@@ -21,4 +21,11 @@ class CustomerController extends Controller
         return redirect('/add-customer')->with('message', 'Customer has been added');
 
     }
+
+    public function index()
+    {
+        $customers = Customer::all();
+        return view('customer.index', compact('customers'));
+        
+    }
 }

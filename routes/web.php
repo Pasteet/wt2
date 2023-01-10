@@ -35,4 +35,7 @@ Route::controller(App\Http\Controllers\CustomerController::class)->group(functio
     Route::get('/add-customer', 'create');
     Route::post('/add-customer', 'store');
     Route::get('/customers', 'index');
+    Route::get('/edit-customer/{customer_id}', 'edit');
+    Route::put('/update-customer/{customer_id}', 'update');
+    Route::delete('/delete-customer/{customer_id}', 'destroy');
 });

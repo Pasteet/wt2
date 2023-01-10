@@ -7,6 +7,9 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+             <x-success-status class="mb-4" :status="session('message')" />
+
             <div class="py-4 px-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <table class="table table-bordered">
                     <thead>
@@ -24,8 +27,17 @@
                             <td>{{ $customer->id }}</td>
                             <td>{{ $customer->name }}</td>
                             <td>{{ $customer->email }}</td>
-                            <td><a href="{{ url('/')} }" class="btn btn-primary">Edit</a></td>
-                            <td><a href="{{ url('/')} }" class="btn btn-danger">Delete</a></td>
+                            <td>
+                                <br>
+                                <a href="{{ url('edit-customer/'. $customer->id) }}" class="btn btn-primary">Edit</a>
+                            </td>
+                            <td>
+                                <form action="{{ url('delete-customer/' .$customer->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <x-primary-button class="btn btn-primary">Delete </x-primary-button>
+                                </form>
+                            </td>
                         </tr>
                         @empty      
                         <tr>

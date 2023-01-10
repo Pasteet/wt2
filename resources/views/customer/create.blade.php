@@ -27,7 +27,7 @@
                     </div>
                     <div>
                         <x-primary-button class="ml-3">
-                            {{ __('Save Customer') }}
+                            {{ __('Save Student') }}
                         </x-primary-button>
                     </div>
                     

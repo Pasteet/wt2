@@ -41,15 +41,16 @@ class CustomerController extends Controller
 
         $customer = Customer::where('id', $customer_id)->update([
             'name' => $data['name'],
-            'email' => $data['email']
+            'email' => $data['email'],
+            'grade' => $data['grade']
         ]);
-        return redirect('/customers')->with('message', 'Customer has been updated');
+        return redirect('/customers')->with('message', 'Student has been updated');
     }
 
     public function destroy($customer_id)
     {
         $customer = Customer::find($customer_id)->delete();
-        return redirect('/customers')->with('message', 'Customer has been deleted');
+        return redirect('/customers')->with('message', 'Student has been deleted');
     }
 
 }

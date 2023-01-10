@@ -1,7 +1,7 @@
 <x-app-layout>     
 <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Add Customer') }}
+            {{ __('Modify a Student') }}
         </h2>
     </x-slot>
 
@@ -16,16 +16,20 @@
                     @method('PUT')
                     
                     <div>
-                        <x-input-label for="name" :value="__('Customer Name')" />
+                        <x-input-label for="name" :value="__('Student Name')" />
                         <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="$customer->name" required autofocus />
                     </div>
                     <div>
-                        <x-input-label for="email" :value="__('Customer email')" />
+                        <x-input-label for="email" :value="__('Student email')" />
                         <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="$customer->email" required autofocus />
                     </div>
                     <div>
+                        <x-input-label for="grade" :value="__('Student grade')" />
+                        <x-text-input id="grade" class="block mt-1 w-full" type="text" name="grade" :value="$customer->grade" required autofocus />
+                    </div>
+                    <div>
                         <x-primary-button class="ml-3">
-                            {{ __('Update Customer') }}
+                            {{ __('Update Student') }}
                         </x-primary-button>
                     </div>
                     

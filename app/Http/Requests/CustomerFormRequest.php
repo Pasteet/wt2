@@ -25,7 +25,8 @@ class CustomerFormRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255'],
-            'email' => ['required', 'max:255', 'email']
+            'email' => ['required', 'max:255', 'email'],
+            'grade' => ['required', 'max:255']
         ];
     }
 }

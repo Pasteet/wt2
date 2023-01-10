@@ -1,7 +1,7 @@
 <x-app-layout>     
 <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Add Customer') }}
+            {{ __('List of Students') }}
         </h2>
     </x-slot>
 
@@ -17,6 +17,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Grade</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -27,6 +28,7 @@
                             <td>{{ $customer->id }}</td>
                             <td>{{ $customer->name }}</td>
                             <td>{{ $customer->email }}</td>
+                            <td>{{ $customer->grade }}</td>
                             <td>
                                 <br>
                                 <a href="{{ url('edit-customer/'. $customer->id) }}" class="btn btn-primary">Edit</a>

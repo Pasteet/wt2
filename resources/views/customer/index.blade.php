@@ -14,21 +14,28 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
+                            @can('admin')
                             <th>ID</th>
+                            @endcan
                             <th>Name</th>
                             <th>Email</th>
                             <th>Grade</th>
+                            @can('admin')
                             <th>Edit</th>
                             <th>Delete</th>
+                            @endcan
                         </tr>
                     </thead>
                     <tbody>
                         @forelse ($customers as $customer)
                         <tr>
+                            @can('admin')
                             <td>{{ $customer->id }}</td>
+                            @endcan
                             <td>{{ $customer->name }}</td>
                             <td>{{ $customer->email }}</td>
                             <td>{{ $customer->grade }}</td>
+                            @can('admin')
                             <td>
                                 <br>
                                 <a href="{{ url('edit-customer/'. $customer->id) }}" class="btn btn-primary">Edit</a>
@@ -40,6 +47,7 @@
                                     <x-primary-button class="btn btn-primary">Delete </x-primary-button>
                                 </form>
                             </td>
+                            @endcan
                         </tr>
                         @empty      
                         <tr>

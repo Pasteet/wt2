@@ -1,3 +1,4 @@
+<title>View Your Grades</title>
 @can('admin')
 <x-app-layout>     
 <x-slot name="header">
